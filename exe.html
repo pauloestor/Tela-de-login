@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Obrigatório</title>
+<link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- TELA DE LOGIN -->
+  <div class="login-container" id="login-screen">
+    <div class="login-box">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Usuário">
+      <input type="password" id="password" placeholder="Senha">
+      <button onclick="login()">Entrar</button>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO DO SITE -->
+  <div id="site-content">
+    <p class="welcome">🎉 Bem-vindo ao site protegido!</p>
+    <p>Esse conteúdo só aparece depois do login.</p>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      // Aqui você pode trocar por validação real
+      if (user === "admin" && pass === "1234") {
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("site-content").style.display = "block";
+      } else {
+        alert("Usuário ou senha incorretos.");
+      }
+    }
+  </script>
+</body>
+</html>
